@@ -8,7 +8,9 @@ export default function Movie({ movie, onToggleWatched, onDeleteMovie }) {
         checked={movie.watched}
         onChange={() => onToggleWatched(movie.id)}
       />
-      <span>{movie.title}</span>
+      <span style={{ textDecoration: movie.watched ? "line-through" : "none" }}>
+        {movie.title}
+      </span>
       <button onClick={() => onDeleteMovie(movie.id)}>Delete</button>
     </li>
   );
